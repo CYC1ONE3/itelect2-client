@@ -71,13 +71,16 @@ body {
   font-weight: 600;
 }
 
-.task-form {
+.task-form,
+.login-form {
   display: flex;
+  flex-wrap: wrap;
   gap: 10px;
   margin: 20px 0;
 }
 
-.task-form input {
+.task-form input,
+.login-form input {
   flex: 1;
   min-width: 0;
   padding: 10px 14px;
@@ -93,18 +96,21 @@ body {
   color-scheme: dark;
 }
 
-.task-form input::placeholder {
+.task-form input::placeholder,
+.login-form input::placeholder {
   color: var(--foam-dim);
 }
 
-.task-form input:focus {
+.task-form input:focus,
+.login-form input:focus {
   outline: none;
   border-color: var(--glow);
   box-shadow: 0 0 0 3px var(--glow-soft);
 }
 
 /* The glowing core */
-.task-form button {
+.task-form button,
+.login-form button {
   padding: 10px 18px;
   font: inherit;
   font-weight: 700;
@@ -116,11 +122,14 @@ body {
   cursor: pointer;
 }
 
-.task-form button:hover {
+.task-form button:hover,
+.login-form button:hover {
   box-shadow: 0 0 34px rgba(63, 242, 242, 0.6);
 }
 
-.task-form button:focus-visible {
+.task-form button:focus-visible,
+.login-form button:focus-visible,
+.who button:focus-visible {
   outline: 3px solid var(--foam);
   outline-offset: 3px;
 }
@@ -153,6 +162,37 @@ body {
   border-radius: 999px;
 }
 
+
+.who {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  margin: 20px 0 0;
+  color: var(--foam-dim);
+}
+
+.who button {
+  padding: 6px 14px;
+  font: inherit;
+  color: var(--brass);
+  background: transparent;
+  border: 1px solid var(--brass);
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.who button:hover {
+  color: var(--abyss);
+  background: var(--brass);
+}
+
+.error {
+  width: 100%;
+  margin: 0;
+  color: #ff8a7a;
+}
+
 @media (max-width: 520px) {
   .task-manager {
     margin: 16px;
@@ -160,7 +200,8 @@ body {
     padding: 20px;
   }
 
-  .task-form {
+  .task-form,
+  .login-form {
     flex-direction: column;
   }
 }
