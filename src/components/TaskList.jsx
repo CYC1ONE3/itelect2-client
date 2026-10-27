@@ -6,7 +6,7 @@ function TaskList({ tasks }) {
         <li key={task.id}>
           <span>{task.title}</span>
           <span className="due-date">
-            {task.dueDate ? `Due ${task.dueDate}` : "No due date"}
+            {task.dueDate ? `Due ${task.dueDate.slice(0, 10)}` : "No due date"}
           </span>
         </li>
       ))}
